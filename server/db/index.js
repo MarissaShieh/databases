@@ -6,17 +6,27 @@ var mysql = require('mysql');
 
 var connection = mysql.createConnection({
   host: 'localhost',
-  user: 'root',
+  user: 'student',
+  password: 'student',
   database: 'chat'
 });
 
-connection.connect(function(err){
-  if (err) {
-    console.log(err);
-    throw err;
-  } else {
-    console.log('Connected to MySQL! -Toshi and Marissa');
-  }
-});
+// connection.connect(function(err){
+//   if (err) {
+//     console.log(err);
+//     throw err;
+//   } else {
+//     connection.query('SELECT * FROM messages', (err, messages, all) => {
+//       if (err) {
+//         console.log(err);
+//       }
+//       console.log(messages);
+//     });
+
+//   }
+// });
+
+connection.connect();
+
 
 module.exports = connection;

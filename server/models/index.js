@@ -3,9 +3,18 @@ var db = require('../db');
 module.exports = {
   messages: {
     // a function which produces all the messages
-    get: function (callback) { //callback was inputted by Marissa
+    get: function (callback) {
       //db.connection
       //connect to the database
+      console.log('model is riiiight here');
+      db.query('SELECT * FROM messages', (err, messages) => {
+        if (err) {
+          console.log(err);
+        } else {
+        console.log('MESSAGES IN MODEL');
+        callback(err, messages);
+        }
+      });
       //tell the database what info we want (select messages.text from messages)
       //^if it's a callback, once you get those results, send it back to controllers
     }, 
@@ -25,4 +34,3 @@ module.exports = {
     post: function () {}
   }
 };
-

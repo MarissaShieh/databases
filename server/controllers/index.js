@@ -4,7 +4,14 @@ module.exports = {
   messages: {
     // a function which handles a get request for all messages
     get: function (req, res) {
-      res.send(); //marissa's guess, put models.get(req?) in send
+      console.log('controller got it');
+      models.messages.get((err, messages) => {
+        if (err) {
+          res.sendStatus(400);
+        } else {
+          res.status(200).json(messages);
+        }
+      });
     }, 
     
     // a function which handles posting a message to the database
