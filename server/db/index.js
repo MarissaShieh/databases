@@ -11,21 +11,6 @@ var connection = mysql.createConnection({
   database: 'chat'
 });
 
-// connection.connect(function(err){
-//   if (err) {
-//     console.log(err);
-//     throw err;
-//   } else {
-//     connection.query('SELECT * FROM messages', (err, messages, all) => {
-//       if (err) {
-//         console.log(err);
-//       }
-//       console.log(messages);
-//     });
-
-//   }
-// });
-
 connection.connect();
 
 
